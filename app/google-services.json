@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "969787285811",
+    "project_id": "leadsdoit",
+    "storage_bucket": "leadsdoit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:969787285811:android:d9e3316dfaaa075af19e46",
+        "android_client_info": {
+          "package_name": "com.example.leadsdoittest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "969787285811-bq6ivnn0r52vkjigaeao9s64c3b3329e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA2y3qOU5f52Frz7hnPDP18HT-cu7f2jnc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "969787285811-bq6ivnn0r52vkjigaeao9s64c3b3329e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

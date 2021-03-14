@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.example.leadsdoittest.start.StartFragmentViewModel.Errors" />
+
+        <variable
+            name="startFragmentViewModel"
+            type="com.example.leadsdoittest.start.StartFragmentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/margin_start"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/margin_end"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/margin_top"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_name"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:errorText='@{startFragmentViewModel.errors.contains(Errors.INVALID_NAME) ? "Inavlid name" : ""}'
+            app:layout_constraintEnd_toEndOf="@id/margin_end"
+            app:layout_constraintStart_toStartOf="@id/margin_start"
+            app:layout_constraintTop_toTopOf="@id/margin_top">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_name_ed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/name"
+                android:text="@={startFragmentViewModel.name}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_phone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:errorText='@{startFragmentViewModel.errors.contains(Errors.INVALID_PHONE_NUMBER) ? "Invalid phone number" : ""}'
+            app:layout_constraintEnd_toEndOf="@id/margin_end"
+            app:layout_constraintStart_toStartOf="@id/margin_start"
+            app:layout_constraintTop_toBottomOf="@id/input_name">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_phone_ed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:importantForAutofill="yes"
+                android:autofillHints="phone"
+                android:text="@={startFragmentViewModel.phone}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:errorText='@{startFragmentViewModel.errors.contains(Errors.INVALID_EMAIL) ? "Invalid email" : ""}'
+            app:layout_constraintEnd_toEndOf="@id/margin_end"
+            app:layout_constraintStart_toStartOf="@id/margin_start"
+            app:layout_constraintTop_toBottomOf="@id/input_phone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_email_ed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/email"
+                android:text="@={startFragmentViewModel.email}" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:onClick="@{() -> startFragmentViewModel.doneNavigation()}"
+            android:text="@string/start"
+            android:textColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="@id/margin_end"
+            app:layout_constraintStart_toStartOf="@id/margin_start"
+            app:layout_constraintTop_toBottomOf="@+id/input_email" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

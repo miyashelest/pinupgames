@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LeadsDoItTest</string>
+    <string name="name">Name</string>
+    <string name="phone_number">+(380)-XXXX-XXX</string>
+    <string name="start">Start</string>
+    <string name="email">Email</string>
+    <string name="notification_channel_id">channel_id</string>
+    <string name="notification_channel_name">Channel</string>
+    <string name="notification_channel_description">Notification test</string>
+    <string name="facebook_app_id">3637660692999301</string>
+    <string name="fb_login_protocol_scheme">fb3637660692999301</string>
+</resources>
